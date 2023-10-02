@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dio.web.api.model.Usuario;
 import com.dio.web.api.repository.UsuarioRepository;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "Users", description = "Users endpoints")
 @RestController
 @RequestMapping(path = "users")
 public class UsuarioController {

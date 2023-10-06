@@ -1,6 +1,6 @@
-import dio.gof.SingletonEager;
-import dio.gof.SingletonLazy;
-import dio.gof.SingletonLazyHolder;
+import dio.gof.singleton.SingletonEager;
+import dio.gof.singleton.SingletonLazy;
+import dio.gof.singleton.SingletonLazyHolder;
 
 public class App {
     public static void main(String[] args) throws Exception {

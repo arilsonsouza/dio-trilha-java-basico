@@ -1,4 +1,9 @@
 spring:
+  spring-devtools:
+    properties:
+      restart:
+        include:
+          springdoc-openapi-ui: /springdoc-openapi-ui-.+\.jar
   datasource:
     url: jdbc:h2:mem:sdw2023
     username: sdw2023

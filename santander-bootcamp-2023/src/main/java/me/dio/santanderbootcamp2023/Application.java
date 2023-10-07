@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 public class Application {
 
 	public static void main(String[] args) {
+		System.setProperty("spring.devtools.restart.enabled", "false");
 		SpringApplication.run(Application.class, args);
 	}
 

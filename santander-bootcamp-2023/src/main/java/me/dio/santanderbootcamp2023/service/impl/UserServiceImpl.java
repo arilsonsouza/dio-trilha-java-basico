@@ -1,4 +1,4 @@
-package me.dio.santanderbootcamp2023.service;
+package me.dio.santanderbootcamp2023.service.impl;
 
 import java.util.List;
 
@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import me.dio.santanderbootcamp2023.domain.model.User;
 import me.dio.santanderbootcamp2023.domain.repository.UserRepository;
+import me.dio.santanderbootcamp2023.service.UserService;
 import me.dio.santanderbootcamp2023.service.exception.BusinessException;
 import me.dio.santanderbootcamp2023.service.exception.NotFoundException;
 
@@ -44,6 +45,7 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new BusinessException("User account must not be null."));
         ofNullable(userToCreate.getCard()).orElseThrow(() -> new BusinessException("User card must not be null."));
 
+        System.out.println("############################" + userToCreate);
         this.validateChangeableId(userToCreate.getId(), "created");
         if (userRepository.existsByAccountNumber(userToCreate.getAccount().getNumber())) {
             throw new BusinessException("This account number already exists.");

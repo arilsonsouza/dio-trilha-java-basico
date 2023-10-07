@@ -1,4 +1,4 @@
-package me.dio.santanderbootcamp2023.controller.dto;
+package me.dio.santanderbootcamp2023.controller.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

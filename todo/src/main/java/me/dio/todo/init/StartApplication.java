@@ -5,7 +5,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import jakarta.transaction.Transactional;
@@ -24,7 +24,7 @@ public class StartApplication implements CommandLineRunner {
     private RoleRepository roleRepository;
 
     @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private PasswordEncoder passwordEncoder;
 
     @Transactional
     @Override
@@ -35,7 +35,7 @@ public class StartApplication implements CommandLineRunner {
 
             Set<Role> roles = new HashSet<>();
             roles.add(adminRole);
-            User admin = new User("admin", bCryptPasswordEncoder.encode("password"), roles);
+            User admin = new User("admin", passwordEncoder.encode("password"), roles);
 
             repository.save(admin);
         }

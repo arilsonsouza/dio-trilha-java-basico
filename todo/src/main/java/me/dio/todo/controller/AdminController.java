@@ -1,5 +1,6 @@
 package me.dio.todo.controller;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AdminController {
 
     @GetMapping
-    public String helloAdmin() {
-        return "Admin access level";
+    public String helloAdmin(Authentication authentication) {
+        return "Admin access level: " + authentication.getName();
     }
 }

@@ -2,6 +2,7 @@ package me.dio.todo.domain.model;
 
 import org.springframework.security.core.GrantedAuthority;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,6 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "roles")
+@Hidden
 public class Role implements GrantedAuthority {
 
     @Id

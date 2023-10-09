@@ -71,6 +71,7 @@ public class SecurityConfiguration {
                     auth.requestMatchers(WHITE_LIST_URL).permitAll();
                     auth.requestMatchers("/api/admins/**").hasRole("ADMIN");
                     auth.requestMatchers("/api/users/**").hasAnyRole("ADMIN", "USER");
+                    auth.requestMatchers("/api/tasks/**").hasAnyRole("ADMIN", "USER");
                     auth.anyRequest().authenticated();
                 });
 
